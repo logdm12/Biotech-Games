@@ -12,7 +12,13 @@
     <script>
         async function runJavaApp() {
             await cheerpjInit();
-            await cheerpjRunJar("app/PCR_Game.jar");
+            try {
+                // Automatically runs the Main-Class in your JAR manifest
+                await cheerpjRunJar("app/PCR_Game.jar");
+            } catch (err) {
+                console.error("Error running JAR:", err);
+                alert("Failed to run the Java game. Check console for details.");
+            }
         }
 
         runJavaApp();
