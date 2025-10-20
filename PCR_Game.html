@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Java with CheerpJ</title>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
+</head>
+<body>
+    <h1>Java Application Running in Browser</h1>
+    <script>
+        async function runJavaApp() {
+            await cheerpjInit();
+            const cj = await cheerpjRunJar("/app/yourfile.jar");
+            const MyClass = await cj.com.yourpackage.MyClass;
+            const obj = await new MyClass();
+            await obj.yourMethod();
+        }
+        runJavaApp();
+    </script>
+</body>
+</html>
