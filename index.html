@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>Java Application Running in Browser</h1>
+    <p>Please wait a few seconds for the game to load...</p>
+
     <script>
         async function runJavaApp() {
             await cheerpjInit();
-            const cj = await cheerpjRunJar("app/PCR_Game.jar");
-            const MyClass = await cj.com.yourpackage.MyClass;
-            const obj = await new MyClass();
-            await obj.yourMethod();
+            await cheerpjRunJar("app/PCR_Game.jar");
         }
+
         runJavaApp();
     </script>
 </body>
